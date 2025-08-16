@@ -30,11 +30,13 @@ void main() {
     sem_wait(sem_id);
 
     if (!tq->count) {
+      printf("nothing to do");
       sem_signal(sem_id);
       sleep(1);
 
     } else {
       task_t current_task = tq->tasks[tq->front];
+      printf("task taken: %s", current_task.cmd);
       tq->front = (tq->front + 1) % MAX_TASKS;
       tq->count--;
 

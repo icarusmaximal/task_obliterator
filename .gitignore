@@ -3,4 +3,7 @@ scheduler
 semaphores
 task
 worker
+client
+
+timely_hello
 a.out
