@@ -47,22 +47,7 @@ int main() {
   printf("Scheduler running. Shared memory and semaphore created.\n");
   printf("Shared Memory ID: %d, Semaphore ID: %d\n", shmid, sem_id);
 
-  // This is where you would fork the worker processes.
-  // For now, let's keep it simple and just show the setup.
-  // We will add the forking logic and worker implementation in the next step.
-
-  for (int i = 0; i < NUM_WORKERS; i++) {
-    pid_t pid;
-    pid = fork();
-    if (pid == -1) {
-      perror("fork");
-      exit(1);
-    }
-
-    if (!pid) {
-      task_queue_t *tq = (task_queue_t *)shmat(shmid, NULL, 0);
-    } else {
-    }
+  while (1) {
+    sleep(5);
   }
-  return 0;
 }
